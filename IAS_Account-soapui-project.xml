@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="ef6a28d3-6e96-4a76-b253-26cce7759355" activeEnvironment="Default" name="IAS_Account" resourceRoot="${projectDir}" soapui-version="5.2.1" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" id="26106f9b-0875-481c-b056-5e762df7b0ad" wadlVersion="http://wadl.dev.java.net/2009/02" name="http://134.213.186.243:7807" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>http://192.168.0.112:7807</con:endpoint></con:endpoints><con:resource name="Login" path="/v1/retail/customer/mobile/login" id="f0fe0ad1-8dbf-455b-abd2-892018ba2ca9"><con:settings/><con:parameters/><con:method name="Login 1" id="2f18bac4-59c3-46ba-ba34-bb5da40904f1" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>422</con:status><con:params/><con:element xmlns:log="http://134.213.186.243/v1/retail/customer/mobile/login">log:Fault</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:log="http://134.213.186.243/v1/retail/customer/mobile/login">log:Response</con:element></con:representation><con:request name="Request 1" id="91fd0a5b-b17a-442e-ab9f-edf1edf9f749" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://192.168.0.112:7807</con:endpoint><con:request>{
+   "mobile_login_request":
+   {
+   "credential_value":"${#Project#credential_value}",
+    "credential_type":"${#Project#credential_type}",
+    "audit_details":
+	{
+	            "device_id":"${#Project#device_id}",
+                "ip_address":"${#Project#ip_address}",
+                "device_name":"${#Project#device_name}",
+				"device_type":"${#Project#device_type}",
+                "app_version":"${#Project#app_version}",
+                "device_manufacturer":"${#Project#device_manufacturer}",
+                "device_model":"${#Project#device_model}",
+                "device_os":"${#Project#device_os}"
+	},
+     "message_id":"${=java.util.UUID.randomUUID()}"
+   }
+   
+   }</con:request><con:originalUri>http://134.213.186.243/v1/retail/customer/mobile/login</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="status" path="/v1/retail/registration/ib/status" id="2f42dfad-a4fd-48c0-bab7-6b536b63924c"><con:settings/><con:parameters/><con:method name="Method 1" id="534fb46f-cee6-4a28-ab2f-60fc10bc0968" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:stat="http://134.213.186.243/v1/retail/registration/ib/status">stat:Response</con:element></con:representation><con:representation type="FAULT"><con:mediaType>text/html</con:mediaType><con:status>504</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:request name="Request 1" id="bcc41d26-1d95-4613-a5e3-cc89c17607ed" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://192.168.0.112:7807</con:endpoint><con:request>{
+
+                "user_info": {
+
+                                "ib_id": "117167966089",
+
+                                "user_name1": "PERF1",
+
+                                "message_id": "${=java.util.UUID.randomUUID()}"
+
+                }
+
+}</con:request><con:originalUri>http://134.213.186.243/v1/retail/registration/ib/status</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="validate_magic_word" path="/v1/retail/registration/ib/validate_magic_word" id="95181d9e-24dc-4f77-a19e-94f72c2c677b"><con:settings/><con:parameters/><con:method name="Method 1" id="db5d9802-af2a-4942-9684-60adc76da59e" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType xsi:nil="true"/><con:status>404</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:val="http://134.213.186.243/192.168.0.112:7807/v1/retail/registration/ib/validate_magic_word">val:Response</con:element></con:representation><con:request name="Request 1" id="191eecc4-04b4-4266-abce-178241134b21" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://192.168.0.112:7807</con:endpoint><con:request>{
+
+  "registration_user_info": {
+
+    "ib_id": "117167966089",
+
+     "message_id": "${=java.util.UUID.randomUUID()}"
+
+  },
+
+  "magic_word": "MAGIC"
+
+}</con:request><con:originalUri>http://134.213.186.243/192.168.0.112:7807/v1/retail/registration/ib/validate_magic_word</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="send" path="/v1/retail/registration/otp/send" id="70d77f8e-0ece-45c3-915e-e08d70b2a114"><con:settings/><con:parameters/><con:method name="Method 1" id="c3fb61ae-a5f0-4d79-851f-52f211dffc94" method="POST"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:send="http://134.213.186.243/v1/retail/registration/otp/send">send:Response</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:request name="Request 1" id="6a10e082-1ffb-41a8-877d-7f7147a0178c" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://192.168.0.112:7807</con:endpoint><con:request>{
+
+  "registration_user_info": {
+
+    "ib_id": "117167966089",
+
+     "message_id": "${=java.util.UUID.randomUUID()}"
+
+  },
+
+                  "authorization_code": "${c_authCode}",
+
+                  "pre_text": "Hi Ash This is the OTP ",
+
+  "post_text": "Please enter it"
+
+ 
+
+}</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="validate" path="/v1/retail/registration/otp/validate" id="614d8686-74ef-489b-967f-578f4df044c2"><con:settings/><con:parameters/><con:method name="Method 1" id="e15ed4d3-e325-4add-9aac-99e759fad14b" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:val="http://134.213.186.243/v1/retail/registration/otp/validate">val:Response</con:element></con:representation><con:request name="Request 1" id="2da2f709-f93c-4bc6-be4e-a5c1546d5836" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://192.168.0.112:7807</con:endpoint><con:request>{
+
+  "registration_user_info": {
+
+    "ib_id": "117167966089",
+
+     "message_id": "${=java.util.UUID.randomUUID()}"
+
+  },
+
+  "authorization_code": "${c_authCode}",
+
+  "one_time_password":"${p_OTP}"
+
+}</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="register" path="/v1/retail/registration/ib/register" id="dc8a1201-e17f-4529-9f94-c23c38f8c5a9"><con:settings/><con:parameters/><con:method name="Method 1" id="41f60bc7-1bb6-493e-8c5a-e2e18e81b4a9" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:reg="http://134.213.186.243/v1/retail/registration/ib/register">reg:Response</con:element></con:representation><con:request name="Request 1" id="5c83a88f-955f-497e-bd3e-9e280f73ec1d" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://192.168.0.112:7807</con:endpoint><con:request>{
+
+  "registration_user_info": {
+
+    "ib_id": "117167966089",
+
+     "message_id": "${=java.util.UUID.randomUUID()}"
+
+  },
+
+  "password": "Password01",
+
+"security_code": [
+
+    ${p_seed1},
+
+    ${p_seed2},
+
+    ${p_seed3},
+
+                ${p_seed4},
+
+    ${p_seed5},
+
+    ${p_seed6},
+
+    ${p_seed7},
+
+    ${p_seed8}
+
+  ],
+
+  "authorization_code": "${c_authCode1}",
+
+  "terms_condition_accepted_date_time": "33"
+
+}</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="register" path="/v1/retail/registration/app/register" id="bdc5edad-c1f6-425a-91df-e5e648f0f7e6"><con:settings/><con:parameters/><con:method name="Method 1" id="db35a13d-351e-4f3d-9ee6-2ef963495710" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:reg="http://134.213.186.243/v1/retail/registration/app/register">reg:Response</con:element></con:representation><con:request name="Request 1" id="7457eaeb-75b7-4a86-9a74-9e7deea3ed19" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://192.168.0.112:7807</con:endpoint><con:request>{
+
+  "registration_user_info": {
+
+    "ib_id": "${p_IBID}",
+
+     "message_id": "${__UUID}"
+
+  },
+
+  "pin": "1234",
+
+  "authorization_code": "${c_authCode2}",
+
+  "audit_details": {
+
+    "device_id": "${p_deviceID}",
+
+    "device_name": "${p_deviceName}",
+
+                "device_type": "${p_deviceType}",
+
+    "ip_address": "10.23.45.56",
+
+    "app_version": "23",
+
+    "device_manufacturer":"SAMSUNG",
+    
+    "device_os":"LollyPop",
+    
+    "device_model":"SamsungNote4"
+
+
+  },
+
+  "terms_condition_accepted_date_time": "33",
+
+  "terms_condition_accepted_version": "12"
+
+}</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="entitlements" path="/v1/retail/customer/mobile/entitlements" id="fbd14a68-713b-4ad8-853d-b222c7cae768"><con:settings/><con:parameters/><con:method name="Method 1" id="10120e74-61ca-44af-ac1b-22cefcde2ceb" method="POST"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType xsi:nil="true"/><con:status>404</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>text/html; charset=utf-8</con:mediaType><con:status>404</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="FAULT"><con:mediaType xsi:nil="true"/><con:status>404</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>422</con:status><con:params/><con:element xmlns:ent="http://134.213.186.243/mobile/entitlements">ent:Fault</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:ent="http://134.213.186.243/mobile/entitlements">ent:Response</con:element></con:representation><con:request name="Request 1" id="8b1d8176-d1d1-46a5-911d-676ad91401ed" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://192.168.0.112:7807</con:endpoint><con:request>{
+customer_entitlements_request:
+{
+user_details:
+{
+"session_id":"",
+"message_id":"",
+"device_id":"",
+"ib_id":""
+}
+}
+}</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="logout" path="/v1/retail/customer/mobile/logout" id="7a91ee17-3902-4246-b968-a6edf95e066f"><con:settings/><con:parameters/><con:method name="Method 1" id="04b4c93d-b6a2-462e-aa95-2b4d43566dc1" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>422</con:status><con:params/><con:element xmlns:log="http://134.213.186.243/v1/retail/customer/mobile/logout">log:Fault</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:log="http://134.213.186.243/v1/retail/customer/mobile/logout">log:Response</con:element></con:representation><con:request name="Request 1" id="a37e7d07-788c-478e-9804-80cceca591fb" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://192.168.0.112:7807</con:endpoint><con:request>{
+"mobile_logout_request":
+{
+ "user_details":
+ {
+ "session_id":"",
+ "message_id":"",
+ "device_id":"",
+ "ib_id":"",
+ 
+ }
+}
+}</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="details" path="/v1/banking/customers/details?action=query" id="0b189c89-64db-49c1-a632-ac2aa6db2ef9"><con:settings/><con:parameters/><con:method name="Method 1" id="d58c6435-a7c9-41e5-be6e-7b5085505435" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>422</con:status><con:params/><con:element xmlns:det="http://134.213.186.243/v1/banking/customers/details/">det:Fault</con:element></con:representation><con:representation type="FAULT"><con:mediaType>text/html; charset=utf-8</con:mediaType><con:status>405</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:det="http://134.213.186.243/v1/banking/customers/details/">det:Response</con:element></con:representation><con:request name="Request 1" id="ef77f6ac-d4bc-4166-8712-1fa4375428e3" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://192.168.0.112:7807</con:endpoint><con:request>{
+"post_customer_details_request":
+{
+"authentication_details":
+{
+"access_token_type":"",
+"authentication_id":"",
+"message_id":"",
+"authentication_value":""
+},
+"contact_details":
+{
+"mobile_phone_number":"",
+"home_phone_number":"",
+"work_phone_number":"",
+"email_address":""
+},
+"personal_details" :
+{
+"title":"",
+"first_name":"",
+"middle_name":"",
+"last_name":""
+}
+}
+}</con:request><con:originalUri>http://134.213.186.243/v1/banking/customers/details/</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="addresses" path="/v1/banking/customers/addresses/?action=query" id="cea9e002-0fca-433d-a52b-f78b7cb5829f"><con:settings/><con:parameters/><con:method name="Method 1" id="874f2219-404b-453e-826b-95d4e685f18f" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>422</con:status><con:params/><con:element xmlns:add="http://134.213.186.243/v1/banking/customers/addresses/">add:Fault</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:add="http://134.213.186.243/v1/banking/customers/addresses/">add:Response</con:element></con:representation><con:request name="Request 1" id="7e61e51b-a3eb-4ff7-9eca-458ed11dd898" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://192.168.0.112:7807</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="IAS" path="/v1/banking/account/savings" id="4daea472-9b69-47fe-96bb-2e1934e2acd5"><con:settings/><con:parameters/><con:method name="Method 1" id="5e74d93c-c18e-4ee7-8c92-67fa94028c4e" method="POST"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>422 500</con:status><con:params/><con:element xmlns:ias="http://134.213.186.243/v1/banking/account/IAS">ias:Fault</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:ias="http://134.213.186.243/v1/banking/account/IAS">ias:Response</con:element></con:representation><con:request name="Request 1" id="d90bd976-6487-456b-92ec-f5039fbfd878" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://192.168.0.112:7807</con:endpoint><con:request>{
+  "authentication_details": {
+    "access_token_type": "CLIENT",
+    "authentication_id": "string",
+    "authentication_value": "string",
+    "message_id": "string"
+  },
+  "account": {
+    "id": "string",
+    "sort_code": "string",
+    "customer_id": "string",
+    "product_code": "string",
+    "title": "string",
+    "short_title": "string",
+    "currency": "string",
+    "joint_indicator": true,
+    "paperless_indicator": true,
+    "iban_no": "string",
+    "source": "INTERNET",
+    "nick_name": "string",
+    "date_opened": "2015-12-15"
+  }
+}</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="create" path="/v1/retail/payments/XFERS/create" id="f2efcd36-9767-4e4d-b475-5c2bbf223faf"><con:settings/><con:parameters/><con:method name="Method 1" id="f91d76da-057f-4879-80f3-14ff1a866f43" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>422</con:status><con:params/><con:element xmlns:cre="http://134.213.186.243/v1/retail/payments/XFERS/create">cre:Fault</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:cre="http://134.213.186.243/v1/retail/payments/XFERS/create">cre:Response</con:element></con:representation><con:request name="Request 1" id="54c7b340-a7e1-4959-91fa-80238578e995" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://192.168.0.112:7807</con:endpoint><con:request>{
+  "user_details": {
+    "device_id": "string",
+    "ib_id": "string",
+    "session_id": "string",
+    "message_id": "string"
+  },
+  "payment_details": {
+    "ft_id": "string",
+    "action": "VALIDATE",
+    "processing_date": "2015-12-15",
+    "debit_details": {
+      "account_id": "string",
+      "account_name": "string",
+      "currency": "string",
+      "amount": "string",
+      "value_date": "2015-12-15"
+    },
+    "credit_details": {
+      "account_id": "string",
+      "account_name": "string",
+      "currency": "string",
+      "amount": "string",
+      "value_date": "2015-12-15"
+    },
+    "beneficiary_details": {
+      "beneficiary_id": "string",
+      "sort_code": "string",
+      "account_id": "string",
+      "beneficiary_name": "string",
+      "bic_code": "string",
+      "aba_code": "string",
+      "iban": "string",
+      "address": {
+        "address_1": "string",
+        "address_2": "string",
+        "address_3": "string"
+      },
+      "beneficiary_bank_address": [
+        "string"
+      ],
+      "inter_bank_code": "string"
+    },
+    "reference": [
+      "string"
+    ],
+    "recurrence": {
+      "recurrence_start_date": "2015-12-15",
+      "recurrence_end_date": "2015-12-15",
+      "next_payment_date": "2015-12-15",
+      "frequency": "Annual"
+    },
+    "charges": {
+      "total_charge_amount": "string",
+      "metro_bank_charges": "Paid by customer",
+      "other_bank_charges": "Paid by customer",
+      "charge_account": "string"
+    },
+    "fx_rate": "string",
+    "base_currency": "string",
+    "payment_inputter_details": {
+      "name": "string",
+      "inputter_id": "string",
+      "date": "2017-06-29T11:12:34.469Z"
+    }
+  }
+}</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="list" path="/v1/retail/accounts/list" id="13101c70-c863-482c-b89a-0b1a981d564d"><con:settings/><con:parameters/><con:method name="Method 1" id="3ea4f7ee-6203-4070-839e-1bb9dfeffae6" method="POST"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:list="http://134.213.186.243/v1/retail/accounts/list">list:Response</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:request name="Request 1" id="0fe7fbb4-1051-4ff0-a507-8b6cc1b32f4a" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://192.168.0.112:7807</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="create" path="/v1/retail/standing_orders/create" id="1ad2cbc7-b0f8-4ffb-9979-95edbf40cadc"><con:settings/><con:parameters/><con:method name="Method 1" id="089b8f61-5e0e-48aa-9a9b-a254db76c57a" method="POST"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:cre="http://134.213.186.243/v1/retail/standing_orders/create">cre:Response</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>422</con:status><con:params/><con:element xmlns:cre="http://134.213.186.243/v1/retail/standing_orders/create">cre:Fault</con:element></con:representation><con:request name="Request 1" id="bdfa8b87-6380-46ba-862b-171121598659" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://192.168.0.112:7807</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="create" path="/v1/retail/payments/FPS/create" id="54b3ac7f-7ce1-495d-a621-1a72cceb8859"><con:settings/><con:parameters/><con:method name="Method 1" id="c393300b-8682-4ca4-a39c-b725abcceed5" method="POST"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:cre="http://134.213.186.243/v1/retail/payments/FPS/create">cre:Response</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:request name="Request 1" id="cbd99cc2-0702-4fa4-9b56-5bc60f36eb81" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://192.168.0.112:7807</con:endpoint><con:request>{
+	"user_details": {
+		"device_id": "",
+		"session_id": "",
+		"message_id": "${=java.util.UUID.randomUUID()}"
+	},
+	"payment_details": {
+		"action": "validate",
+		"processing_date": "${#Project#XFERS_PROCESSING_DATE}",
+		"debit_details": {
+			"account_id":"${#Project#XFERS_DEBIT_ACCOUNT_ID}",
+			"currency":"${#Project#CURRENCY}",
+			"amount":"10",
+			"value_date":"${#Project#XFERS_VALUE_DATE}"
+		},
+		"beneficiary_details": {
+			"beneficiary_id":"${#Project#BenID}",
+			"account_id":"${#Project#BenAccountID}",
+			"beneficiary_name":"${#Project#BenName}",
+			"sort_code":"${#Project#BenSortCode}"
+		},
+		"reference": ["metro"],
+		"recurrence": {
+			"frequency": "Daily"
+		},
+		"charges": {},
+		"payment_inputter_details": {
+			"name": "MR P METRO0001",
+			"inputter_id": "10915566",
+			"date": "2016-09-27"
+		}
+	}
+}</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="validate" path="/v1/retail/cards/validate" id="3eb1e307-4aae-48fa-9f66-1d707fb7e741"><con:settings/><con:parameters/><con:method name="Method 1" id="9a0cae27-5c4d-4583-ad7c-c929bda96df3" method="POST"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType xsi:nil="true"/><con:status>404</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType xsi:nil="true"/><con:status>404</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:val="http://192.168.0.112/v1/retail/cards/validate">val:Response</con:element></con:representation><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>422</con:status><con:params/><con:element xmlns:val="http://192.168.0.112/v1/retail/cards/validate">val:Fault</con:element></con:representation><con:request name="Request 1" id="63fda68f-e37e-46de-9093-f6f627c729a7" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://192.168.0.112:7807</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="create" path="/v1/retail/beneficiaries/create" id="96e9c007-25ae-4a24-9f08-d6f647465c71"><con:settings/><con:parameters/><con:method name="Method 1" id="897ffa86-0e6f-465f-9153-94fc6d3b3e84" method="POST"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>422 500</con:status><con:params/><con:element xmlns:cre="http://192.168.0.112/v1/retail/beneficiaries/create">cre:Fault</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>500</con:status><con:params/><con:element xmlns:cre="http://192.168.0.112/v1/retail/beneficiaries/create">cre:Fault</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:cre="http://192.168.0.112/v1/retail/beneficiaries/create">cre:Response</con:element></con:representation><con:request name="Request 1" id="42ecd669-d4b4-42f3-bd8c-4bb2fb7a7e89" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://192.168.0.112:7807</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="action" path="/v1/retail/cards/action" id="b006ea08-0d6c-4de2-9eb6-aa72ec84135e"><con:settings/><con:parameters/><con:method name="Method 1" id="8cbfbb06-93c9-4c68-8a86-ebcae3f21859" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>422 500</con:status><con:params/><con:element xmlns:act="http://192.168.0.112/v1/retail/cards/action">act:Fault</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:act="http://192.168.0.112/v1/retail/cards/action">act:Response</con:element></con:representation><con:request name="Request 1" id="b736899d-5aed-4a05-9efd-1a539e6488f4" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://192.168.0.112:7807</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:interface xsi:type="con:RestService" id="182081d7-6cc4-4a33-990e-2b5c414725be" wadlVersion="http://wadl.dev.java.net/2009/02" name="http://10.248.87.165:7801" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://10.248.87.165:7801</con:endpoint></con:endpoints><con:resource name="" path="/v1/retail/registration/ib/validate_card" id="4c7900c0-18d2-4eb7-93f8-0f2ba22e4df3"><con:settings/><con:parameters/><con:method name="" id="688b2b5e-b125-460c-af15-d456434e4f5d" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="09aa2634-2b91-4209-986e-d2fef80b36c2" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://10.248.87.165:7801</con:endpoint><con:request>{
+  "registration_user_info": {
+    "ib_id": "${#Project#IB_ID_WithCard1}",
+    "message_id":"${=java.util.UUID.randomUUID()}"
+  },
+  "account_id": "${#Project#CC_AcctID}",
+  "card_number": ["${#Project#CARDNUMBER_1}",
+  "${#Project#CARDNUMBER_2}",
+  "${#Project#CARDNUMBER_3}",
+  "${#Project#CARDNUMBER_4}"
+      ]
+} </con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:testSuite id="71d8f8ca-84fe-4d44-92ed-5179c51dd5fe" name="SIT_ANDREA_Registration"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="55fd2284-4512-406b-a587-2c257eda8964" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="REGISTRATION" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="IB_STATUS" id="52c1f87d-4f10-4070-9c2c-c0c41e9139bd"><con:settings/><con:config service="http://134.213.186.243:7807" resourcePath="/v1/retail/registration/ib/status" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="IB_STATUS" id="bcc41d26-1d95-4613-a5e3-cc89c17607ed" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>${#Project#ENDPOINT}</con:endpoint><con:request>{
+
+                "user_info": {
+
+                                "ib_id": "${#TestSuite#IB_ID}",
+
+                                "user_name1": "${#TestSuite#User_Name}",
+
+                                "message_id": "${=java.util.UUID.randomUUID()}"
+
+                }
+
+}</con:request><con:originalUri>http://134.213.186.243/v1/retail/registration/ib/status</con:originalUri><con:assertion type="Simple Contains" id="bd0c8d3b-10e0-437f-92d6-93aeebfe4ffc" name="Contains"><con:configuration><token>IB_STATUS_SUCCESS</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple NotContains" id="dba42d82-05a5-4b2f-a498-03a654a5b600" name="Not Contains"><con:configuration><token>error</token><ignoreCase>true</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Valid HTTP Status Codes" id="cd274942-8c3f-46c8-b918-ceb7ac9a4cc4" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="MAGIC_WORD" id="63943d1a-6318-4ac2-9018-8d89800756eb"><con:settings/><con:config service="http://134.213.186.243:7807" resourcePath="/v1/retail/registration/ib/validate_magic_word" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="MAGIC_WORD" id="191eecc4-04b4-4266-abce-178241134b21" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>${#Project#ENDPOINT}</con:endpoint><con:request>{
+
+  "registration_user_info": {
+
+    "ib_id": "${#TestSuite#IB_ID}",
+
+     "message_id": "${=java.util.UUID.randomUUID()}"
+
+  },
+
+  "magic_word": "MAGIC"
+
+}</con:request><con:originalUri>http://134.213.186.243/192.168.0.112:7807/v1/retail/registration/ib/validate_magic_word</con:originalUri><con:assertion type="Simple Contains" id="c578d91c-f4e5-4aa0-b95f-588355f87eac" name="Contains"><con:configuration><token>VALIDATE_MAGIC_WORD_STATUS_SUCCESS</token><ignoreCase>true</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple NotContains" id="885ec7a5-6f1e-41ea-b46e-1d41787fdd56" name="Not Contains"><con:configuration><token>error</token><ignoreCase>true</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Valid HTTP Status Codes" id="717e31ea-be09-40d9-b56e-c5da797399c4" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="transfer" name="AUTH_CODE" id="6c5a6c3d-482e-4058-b6ed-4e9472593dc9"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false"><con:name>AUTH_CODE</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>MAGIC_WORD</con:sourceStep><con:sourcePath>$.response_data.authorization_code</con:sourcePath><con:targetType>AUTH_CODE</con:targetType><con:targetStep>#TestCase#</con:targetStep><con:type>JSONPATH</con:type><con:upgraded>true</con:upgraded></con:transfers></con:config></con:testStep><con:testStep type="restrequest" name="OTP_SEND" id="f98b2509-6301-4cf1-b2e8-1c9f6ad1e5e0"><con:settings/><con:config service="http://134.213.186.243:7807" resourcePath="/v1/retail/registration/otp/send" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="OTP_SEND" id="6a10e082-1ffb-41a8-877d-7f7147a0178c" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>${#Project#ENDPOINT}</con:endpoint><con:request>{
+
+  "registration_user_info": {
+
+    "ib_id": "${#TestSuite#IB_ID}",
+
+     "message_id": "${=java.util.UUID.randomUUID()}"
+
+  },
+
+                  "authorization_code": "${#TestCase#AUTH_CODE}",
+
+                  "pre_text": "Hi Ash This is the OTP ",
+
+  "post_text": "Please enter it"
+
+ 
+
+}</con:request><con:originalUri>http://134.213.186.243/v1/retail/registration/otp/send</con:originalUri><con:assertion type="Simple Contains" id="a31b4be2-62bb-40d1-bbb7-89bd21ec68ff" name="Contains"><con:configuration><token>SENT_OTP_SUCCESS</token><ignoreCase>true</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple NotContains" id="f76e1bb1-0313-4165-b707-6a17971cd7fd" name="Not Contains"><con:configuration><token>error</token><ignoreCase>true</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Valid HTTP Status Codes" id="50f0b965-0176-4b16-aef3-82ae65310e5b" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="OTP_VERIFY" id="339b9a9d-39d7-49ee-9789-103277becd01"><con:settings/><con:config service="http://134.213.186.243:7807" resourcePath="/v1/retail/registration/otp/validate" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="OTP_VERIFY" id="2da2f709-f93c-4bc6-be4e-a5c1546d5836" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>${#Project#ENDPOINT}</con:endpoint><con:request>{
+
+  "registration_user_info": {
+
+    "ib_id": "${#TestSuite#IB_ID}",
+
+     "message_id": "${=java.util.UUID.randomUUID()}"
+
+  },
+
+  "authorization_code": "${#TestCase#AUTH_CODE}",
+
+  "one_time_password":"138973579"
+
+}</con:request><con:originalUri>http://134.213.186.243/v1/retail/registration/otp/validate</con:originalUri><con:assertion type="Simple Contains" id="c340f515-51aa-4b95-9cea-eb206e88e9db" name="Contains"><con:configuration><token>VALIDATE_OTP_SUCCESS</token><ignoreCase>true</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple NotContains" id="17b9ba7c-b38e-4033-9c50-090be68265c7" name="Not Contains"><con:configuration><token>error</token><ignoreCase>true</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Valid HTTP Status Codes" id="78ac7e85-4424-4dae-9b4f-c521b2b6bb05" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="transfer" name="AUTH_CODE2" id="47740a02-5ee0-4063-aaf4-11b11fc710f8"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false"><con:name>AUTH_CODE2</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>OTP_VERIFY</con:sourceStep><con:sourcePath>$.response_data.authorization_code</con:sourcePath><con:targetType>AUTH_CODE2</con:targetType><con:targetStep>#TestCase#</con:targetStep><con:type>JSONPATH</con:type><con:targetTransferType>JSONPATH</con:targetTransferType><con:upgraded>true</con:upgraded></con:transfers></con:config></con:testStep><con:testStep type="restrequest" name="IBID_REGISTER" id="9d38bf48-2413-44f8-ac29-719e4030a9d6"><con:settings/><con:config service="http://134.213.186.243:7807" resourcePath="/v1/retail/registration/ib/register" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="IBID_REGISTER" id="5c83a88f-955f-497e-bd3e-9e280f73ec1d" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>${#Project#ENDPOINT}</con:endpoint><con:request>{
+
+  "registration_user_info": {
+
+    "ib_id": "${#TestSuite#IB_ID}",
+
+     "message_id": "${=java.util.UUID.randomUUID()}"
+
+  },
+
+  "password": "${#TestSuite#Password}",
+
+"security_code": [
+
+    1,
+
+    1,
+
+    1,
+
+    1,
+
+    1,
+
+    1,
+
+    1,
+
+    1
+
+  ],
+
+  "authorization_code": "${#TestCase#AUTH_CODE2}",
+
+  "terms_condition_accepted_date_time": "33"
+
+}</con:request><con:originalUri>http://134.213.186.243/v1/retail/registration/ib/register</con:originalUri><con:assertion type="Simple Contains" id="5bbea6fc-a02d-41c3-adde-6c4ab7c446c7" name="Contains"><con:configuration><token>REGISTER_IB_SUCCESS</token><ignoreCase>true</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple NotContains" id="1c270f74-6d68-4cfb-adb1-1b2e94906f21" name="Not Contains"><con:configuration><token>error</token><ignoreCase>true</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Valid HTTP Status Codes" id="691f5fdb-4abb-4a7f-996d-d0f292204027" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="transfer" name="AUTH_CODE3" id="945a6603-b90f-4545-b6ae-4ecfe66c4931"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false"><con:name>AUTH_CODE3</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>IBID_REGISTER</con:sourceStep><con:sourcePath>$.response_data.authorization_code</con:sourcePath><con:targetType>AUTH_CODE3</con:targetType><con:targetStep>#TestCase#</con:targetStep><con:type>JSONPATH</con:type><con:targetTransferType>JSONPATH</con:targetTransferType><con:upgraded>true</con:upgraded></con:transfers></con:config></con:testStep><con:testStep type="restrequest" name="APP_REGISTER" id="7c92660e-0588-40cd-aad7-de36606c59af"><con:settings/><con:config service="http://134.213.186.243:7807" resourcePath="/v1/retail/registration/app/register" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="APP_REGISTER" id="7457eaeb-75b7-4a86-9a74-9e7deea3ed19" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>${#Project#ENDPOINT}</con:endpoint><con:request>{
+
+  "registration_user_info": {
+
+    "ib_id": "${#TestSuite#IB_ID}",
+
+     "message_id": "${=java.util.UUID.randomUUID()}"
+
+  },
+
+  "pin": "${#TestSuite#PIN}",
+
+  "authorization_code": "${#TestCase#AUTH_CODE3}",
+
+  "audit_details": {
+
+    "device_id": "${#TestSuite#Device_Id}",
+
+    "device_name": "${#TestSuite#Device_Name}",
+
+    "device_type": "${#TestSuite#device_type}",
+
+    "ip_address": "${#TestSuite#IP_Address}",
+
+    "app_version": "${#TestSuite#App_Version}",
+
+    "device_manufacturer":"${#TestSuite#Device_Manufacturer}",
+    
+    "device_os":"${#TestSuite#Device_OS}",
+    
+    "device_model":"${#TestSuite#Device_Model}"
+
+
+  },
+
+  "terms_condition_accepted_date_time": "33",
+
+  "terms_condition_accepted_version": "12"
+
+}</con:request><con:originalUri>http://134.213.186.243/v1/retail/registration/app/register</con:originalUri><con:assertion type="Simple Contains" id="448ec4ca-94fd-4573-85e2-17a8287ddbf0" name="Contains"><con:configuration><token>REGISTER_LOGIN_SUCCESS</token><ignoreCase>true</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple NotContains" id="9ae051e3-91db-4332-9975-d1f8a8e92a7b" name="Not Contains"><con:configuration><token>error</token><ignoreCase>true</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Valid HTTP Status Codes" id="60e50bc8-e0ce-4af1-b51d-92e6355d5a11" name="Valid HTTP Status Codes"><con:configuration><codes>200
+</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Validate_Card" id="601755d3-edee-4c65-a98c-58cbd7ed7b54"><con:settings/><con:config service="http://10.248.87.165:7801" resourcePath="/v1/retail/registration/ib/validate_card" methodName="" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Validate_Card" id="a430326c-b157-4db8-96d0-178ae7ca6df2" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>${#Project#ENDPOINT}</con:endpoint><con:request>{
+  "registration_user_info": {
+    "ib_id": "${#Project#IB_ID_WithCard1}",
+    "message_id":"${=java.util.UUID.randomUUID()}"
+  },
+  "account_id": "${#Project#CC_AcctID}",
+  "card_number": ["${#Project#CARDNUMBER_1}",
+  "${#Project#CARDNUMBER_2}",
+  "${#Project#CARDNUMBER_3}",
+  "${#Project#CARDNUMBER_4}"
+      ]
+} </con:request><con:originalUri>http://134.213.186.243/v1/retail/registration/ib/validate_card</con:originalUri><con:assertion type="Simple NotContains" id="44059b3d-73aa-48cc-bafb-62a991a5bf9b" name="Not Contains"><con:configuration><token>ERROR</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="6aa21a7d-7719-4f9f-bd83-c2ca7a3080ba" name="Contains"><con:configuration><token/><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>AUTH_CODE</con:name><con:value>34fc195a-2df4-48a2-9ea6-3a339b2259d1</con:value></con:property><con:property><con:name>AUTH_CODE2</con:name><con:value>f80fbd2d-280d-402e-9406-236a954bfb82</con:value></con:property><con:property><con:name>AUTH_CODE3</con:name><con:value>6fd40fa5-86d6-420f-8aa3-ede741edf3d6</con:value></con:property></con:properties></con:testCase><con:properties><con:property><con:name>Session_Id</con:name><con:value>3c83ad19-b2a1-4962-a2d8-d480ec7cf263</con:value></con:property><con:property><con:name>Message_Id</con:name><con:value>7b541c0f-31d1-4cda-9769-1d5daa797829</con:value></con:property><con:property><con:name>Device_Id</con:name><con:value>E3AACEC9-BAC7-3337-1786-414CF04EB719</con:value></con:property><con:property><con:name>IB_ID</con:name><con:value>117044306631</con:value></con:property><con:property><con:name>User_Name</con:name><con:value>PERF1</con:value></con:property><con:property><con:name>Password</con:name><con:value>Password01</con:value></con:property><con:property><con:name>PIN</con:name><con:value>1111</con:value></con:property><con:property><con:name>Device_Name</con:name><con:value>MetroMobileDevice</con:value></con:property><con:property><con:name>device_type</con:name><con:value>IOS</con:value></con:property><con:property><con:name>IP_Address</con:name><con:value>10.23.45.56</con:value></con:property><con:property><con:name>App_Version</con:name><con:value>23</con:value></con:property><con:property><con:name>Device_OS</con:name><con:value>LollyPop</con:value></con:property><con:property><con:name>Device_Model</con:name><con:value>SamsungNote4</con:value></con:property><con:property><con:name>Device_Manufacturer</con:name><con:value>SAMSUNG</con:value></con:property></con:properties></con:testSuite><con:testSuite id="76e935a6-0abc-4319-88fc-21968a2db8ee" name="Card_validate"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="d6f0804c-b8ab-479f-b47c-425e7986fa76" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="ValidateCard" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="Login" id="d7dc7990-2c28-4e7d-9523-c7575fea6c45"><con:settings/><con:config service="http://134.213.186.243:7807" resourcePath="/v1/retail/customer/mobile/login" methodName="Login 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Login" id="91fd0a5b-b17a-442e-ab9f-edf1edf9f749" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>${#Project#ENDPOINT}</con:endpoint><con:request>	
+
+{
+  "credential_value": "${#TestSuite#PIN}",
+  "credential_type": "DEVICE_PIN",
+  "audit_details": {
+      "device_id": "${#TestCase#Device_Id}",
+    "device_name": "${#TestSuite#Device_Name}",
+    "ip_address": "${#TestSuite#IP_Address}",
+    "app_version": "${#TestSuite#App_Version}"
+  },
+  "message_id": "${=java.util.UUID.randomUUID()}"
+} </con:request><con:originalUri>http://134.213.186.243/v1/retail/customer/mobile/login</con:originalUri><con:assertion type="Simple Contains" id="5a72432d-4344-429d-b46b-b13ca28095b4"><con:configuration><token>LOGIN_AUTH_SUCCESS</token><ignoreCase>true</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple NotContains" id="2192ae36-0a19-4536-8ef6-ad1fe706a7d3" name="Not Contains"><con:configuration><token>error</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Valid HTTP Status Codes" id="e39281fa-6cc4-42b7-95c7-db94295b4d45" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="b00660e4-80a3-4c8f-8c11-bc714688bad0" name="StepLogging_writeStepLog(disabled)"><con:configuration><scriptText>new f.WriteStepLog(log,context,messageExchange)</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="transfer" name="SessionId" id="a65d2aca-efa2-4d7c-8867-0b010ef14993"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false"><con:name>Session_Id</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>Login</con:sourceStep><con:sourcePath>$.user_details.session_id</con:sourcePath><con:targetType>Session_Id</con:targetType><con:targetStep>#TestCase#</con:targetStep><con:type>JSONPATH</con:type><con:targetTransferType>JSONPATH</con:targetTransferType><con:upgraded>true</con:upgraded></con:transfers></con:config></con:testStep><con:testStep type="restrequest" name="ENTITLEMENT_REQUEST" id="954b4a20-e8af-4337-b458-52c17358c2b2"><con:settings/><con:config service="http://134.213.186.243:7807" resourcePath="/v1/retail/customer/mobile/entitlements" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="ENTITLEMENT_REQUEST" id="8b1d8176-d1d1-46a5-911d-676ad91401ed" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>${#Project#ENDPOINT}</con:endpoint><con:request>{
+"user_details":
+{
+"session_id":"${#TestCase#Session_Id}",
+"message_id":"${=java.util.UUID.randomUUID()}",
+"device_id":"${#TestCase#Device_Id}"
+}
+}</con:request><con:originalUri>http://134.213.186.243/mobile/entitlements</con:originalUri><con:assertion type="Simple Contains" id="7895f834-875a-439c-81e7-6a56b64abd60" name="Contains"><con:configuration><token/><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple NotContains" id="121408ae-a198-441b-b05c-217f7ec66d46" name="Not Contains"><con:configuration><token>error</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Valid HTTP Status Codes" id="28158f71-d3e3-46a3-8844-d0f3606755d0" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="cb9cd6e2-b6d1-4b9a-8123-b24d5a06dbd5" name="StepLogging_writeStepLog(disabled)"><con:configuration><scriptText>new f.WriteStepLog(log,context,messageExchange)</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="CardValidate" id="2951671a-3983-444b-9bec-bd1f03812925"><con:settings/><con:config service="http://134.213.186.243:7807" resourcePath="/v1/retail/cards/validate" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="CardValidate" id="63fda68f-e37e-46de-9093-f6f627c729a7" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://192.168.0.112:7807</con:endpoint><con:request>{
+  "authentication_details": {
+    "access_token_type": "DEVICE",
+    "authentication_id": "${#TestCase#Device_Id}",
+    "authentication_value": "${#TestCase#Session_Id}",
+    "message_id": "${=java.util.UUID.randomUUID()}"
+  },
+  "account_id": "${#TestCase#Account_Id}",
+  "card_number": [
+  9,9,8,7
+  ]
+}</con:request><con:originalUri>http://192.168.0.112/v1/retail/cards/validate</con:originalUri><con:assertion type="Simple Contains" id="1050ffc0-c28a-4f8a-9463-0c28a7b7c6dc" name="Contains"><con:configuration><token>VALIDATE_CARD_SUCCESS</token><ignoreCase>true</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple NotContains" id="06a6e381-896e-4d81-b9fe-2c32b6e18d55" name="Not Contains"><con:configuration><token>error</token><ignoreCase>true</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Valid HTTP Status Codes" id="06121ce3-9023-46b9-9f11-b485d1131a79" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>Device_Id</con:name><con:value>E3AACEC9-BAC7-3337-1786-414CF04EB914</con:value></con:property><con:property><con:name>Session_Id</con:name><con:value>cb1269e1-666e-4659-b3b6-373eec837e1d</con:value></con:property><con:property><con:name>Customer_Id</con:name><con:value>11142988</con:value></con:property><con:property><con:name>Account_Id</con:name><con:value>21852125</con:value></con:property></con:properties></con:testCase><con:properties><con:property><con:name>PIN</con:name><con:value>1111</con:value></con:property><con:property><con:name>Device_Name</con:name><con:value>MetroMobileDevice</con:value></con:property><con:property><con:name>IP_Address</con:name><con:value>10.23.45.56</con:value></con:property><con:property><con:name>App_Version</con:name><con:value>23</con:value></con:property></con:properties></con:testSuite><con:properties><con:property><con:name>ENDPOINT</con:name><con:value>${#Project#QAR2}</con:value></con:property><con:property><con:name>QAR2</con:name><con:value>http://192.168.0.112:7807</con:value></con:property><con:property><con:name>SIT_ANDREA</con:name><con:value>http://10.248.87.165:7801</con:value></con:property></con:properties><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
